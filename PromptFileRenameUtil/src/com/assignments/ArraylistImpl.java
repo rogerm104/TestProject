@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-public class ArraylistImpl {
+public class ArraylistImpl { 
 
 	public static void main(String args[]){
 		
@@ -36,7 +36,7 @@ public class ArraylistImpl {
 			}
 			//using enhanced for loop
 			
-			//Sorting
+			//Sorting basis
 			//Collections.sort(Cars);??
 			Comparator<Car> carComparator=  new   ComparatorImpl(); 
 			Collections.sort(Cars,carComparator);
