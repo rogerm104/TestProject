@@ -26,6 +26,8 @@ public class HasMapExample {
 		Employee emp4 = new Employee(103,"Fouth Employee", "IT","Nishanth");
 
 		Map <Employee,String> empMap = new HashMap<Employee,String>();
+		//Map <Employee,String> empMap = new Hashtable<Employee,String>();
+
 		empMap.put(emp1, "Pass");
 		empMap.put(emp2, "Fail");
 		empMap.put(emp3, "Pass");
@@ -53,7 +55,7 @@ public class HasMapExample {
 		while(it.hasNext()){
 			Map.Entry<Employee,String> entry = it.next();
 			logNow.debug("NEW entry.getKey() " + entry.getKey());							
-			logNow.debug("NEW entry.getValue() " + entry.getValue());							
+			logNow.debug("entry.getValue() " + entry.getValue());							
 		}
 	}
 }
