@@ -16,10 +16,10 @@ public class Employee {
 		this.empName= empName;
 		this.empDesg=empDesg;
 		this.empManager=empManager;	
-		
+
 		logNow.debug("Employee constructor called !");
 	}
-	
+
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
@@ -82,6 +82,21 @@ public class Employee {
 				+ ", empDesg=" + empDesg + ", empManager=" + empManager + "]";
 	}
 
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((empDesg == null) ? 0 : empDesg.hashCode());
+		result = prime * result + empID;
+		result = prime * result
+				+ ((empManager == null) ? 0 : empManager.hashCode());
+		result = prime * result + ((empName == null) ? 0 : empName.hashCode());
+		return result;
+	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
