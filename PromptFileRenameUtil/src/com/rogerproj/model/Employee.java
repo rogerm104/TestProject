@@ -82,4 +82,37 @@ public class Employee {
 				+ ", empDesg=" + empDesg + ", empManager=" + empManager + "]";
 	}
 
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (empDesg == null) {
+			if (other.empDesg != null)
+				return false;
+		} else if (!empDesg.equals(other.empDesg))
+			return false;
+		if (empID != other.empID)
+			return false;
+		if (empManager == null) {
+			if (other.empManager != null)
+				return false;
+		} else if (!empManager.equals(other.empManager))
+			return false;
+		if (empName == null) {
+			if (other.empName != null)
+				return false;
+		} else if (!empName.equals(other.empName))
+			return false;
+		return true;
+	}
+
 }

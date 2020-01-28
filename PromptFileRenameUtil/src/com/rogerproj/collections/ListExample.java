@@ -29,6 +29,7 @@ public static void main(String[] args) {
 	empList.add(emp2);
 	empList.add(emp3);
 	empList.add(emp4);
+
 	//First way to iterate
 	Iterator<Employee> it =empList.iterator();
 	while(it.hasNext()){
@@ -37,14 +38,11 @@ public static void main(String[] args) {
 	//Second way to iterate
 	for(Employee e: empList){
 		logNow.debug("For through all the objects in arraylist " +e.getEmpManager());
-
 	}
-
-
 	
-	
-	
-	
+	logNow.debug("empList.size() " +empList.size());
+	logNow.debug("empList.get(0) " +empList.get(0));
+	logNow.debug("empList.get(1) equals " +empList.get(1).equals(new  Employee(102,"Second Employee", "IT","Prashant Rai") ));	
 }
 	
 }
