@@ -2,7 +2,7 @@ package com.rogerproj.model;
 
 import org.apache.log4j.Logger;
 
-public class Employee implements Comparable<Object> {
+public class Employee   {
 	private int empID;
 	private String empName;
 	private String empDesg;
@@ -143,12 +143,12 @@ public class Employee implements Comparable<Object> {
 		return true;
 	}
 
-	@Override
-	public int compareTo(Object arg0) {
-		int returncode = -1;
-		if (this.empID > ((Employee) arg0).getEmpID()) {
-			returncode = 1;
-		}
-		return returncode;
-	}
+//	@Override
+//	public int compareTo(Object arg0) {
+//		int returncode = -1;
+//		if (this.empID > ((Employee) arg0).getEmpID()) {
+//			returncode = 1;
+//		}
+//		return returncode;
+//	}
 }

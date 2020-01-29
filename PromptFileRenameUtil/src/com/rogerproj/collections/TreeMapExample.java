@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import com.rogerproj.model.Phone;
 
 //Lesson Learn  have a very strong compare / compareTo implementation for sorting and duplicate detection
+//Internally node with node(Key,Value,Color)- Balanced tree implementation red- black algorithm
 class PhoneCompatator implements Comparator<Phone>{
 
 	@Override

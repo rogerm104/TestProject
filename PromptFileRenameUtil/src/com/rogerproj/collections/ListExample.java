@@ -1,6 +1,7 @@
 package com.rogerproj.collections;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -34,13 +35,27 @@ public class ListExample {
 		empList.add(emp4);
 
 		//First way to iterate
+		logNow.debug(new Date()+" empList.size() BEFORE " +empList.size());
 		Iterator<Employee> it =empList.iterator();
 		while(it.hasNext()){
-			logNow.debug("iterating through all the objects in arraylist " +it.next().getEmpName());
+			logNow.debug("iterating through all the objects in arraylist ***" );
+			if(it.next().equals(emp1)){
+				logNow.debug("Removing "+emp1);
+				it.remove();
+			}
 		}
+		logNow.debug(new Date()+" empList.size() AFTER " +empList.size());
+
+		
 		//Second way to iterate
+
 		for(Employee e: empList){
 			logNow.debug("For through all the objects in arraylist " +e.getEmpManager());
+			if(e.equals(emp1)){
+				//logNow.debug("Removing "+emp1);
+				//empList.remove(emp1);
+				//causes concurrent modification exception
+			}
 		}
 		logNow.debug("empList.size() " +empList.size());
 		logNow.debug("empList.get(0) " +empList.get(0));

@@ -1,5 +1,6 @@
 package com.rogerproj.collections;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -39,7 +40,7 @@ public class HasMapExample {
 		empMap.put(emp2, "Fail");
 		empMap.put(emp3, "Pass");
 		empMap.put(emp4, "Fail");
-		empMap.put(null, "Failed null");
+		//empMap.put(null, "Failed null");
 
 		logNow.debug("empMap.size() null key " + empMap.size());		
 		logNow.debug("empMap.get(0) null key " + empMap.get(null));		
@@ -57,12 +58,28 @@ public class HasMapExample {
 		for(Employee e :empSet){
 			logNow.debug("e.getValue() " + empMap.get(e));							
 		}
+		
+		
 		//Iterator
 		Iterator<Map.Entry<Employee,String>> it =  empMap.entrySet().iterator();
 		while(it.hasNext()){
+			 
 			Map.Entry<Employee,String> entry = it.next();
-			logNow.debug("NEW entry.getKey() " + entry.getKey());							
-			logNow.debug("entry.getValue() " + entry.getValue());							
+			logNow.debug(new Date() + " NEW entry.getKey() " + entry.getKey());							
+			logNow.debug(new Date() + " entry.getValue() " + entry.getValue());	
+			logNow.debug(new Date() +" mapSize " + empMap.size() );
+
+			if (entry.getKey().equals(emp1)){
+				String d=empMap.remove(entry.getKey());	
+				logNow.debug(new Date() +" mapSize " + empMap.size() + " String d = "+d);
+				logNow.debug("removing key operation ");	
+			}
+			logNow.debug(new Date() +" mapSize " + empMap.size());
+
 		}
-	}
+	//	logNow.debug("mapSize " + empMap.size());	
+	//	String d=empMap.remove(emp1);	
+	//	logNow.debug("mapSize " + empMap.size() + " String d = "+d);	
+
+	}   
 }
