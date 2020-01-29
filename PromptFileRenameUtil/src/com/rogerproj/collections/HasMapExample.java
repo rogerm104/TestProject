@@ -74,6 +74,10 @@ public class HasMapExample {
 				logNow.debug(new Date() +" mapSize " + empMap.size() + " String d = "+d);
 				logNow.debug("removing key operation ");	
 			}
+			if (entry.getKey().equals(emp1)){
+				empMap.put(emp1, "NEW");
+				logNow.debug("***adding  emp1 key operation ");	
+			}
 			logNow.debug(new Date() +" mapSize " + empMap.size());
 
 		}

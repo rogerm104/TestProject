@@ -28,6 +28,7 @@ public class StaticExample {
 
 	private static final Logger logNow = 	Logger.getLogger(StaticExample.class);
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		logNow.debug( new Date()+" Getting Static method Output "+new StaticExample().getVarStaticValue());
 		StaticExample.nestedclass obj = new StaticExample.nestedclass();
