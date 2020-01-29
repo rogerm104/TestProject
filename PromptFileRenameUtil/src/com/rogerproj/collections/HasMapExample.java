@@ -11,6 +11,13 @@ import org.apache.log4j.Logger;
 import com.rogerproj.model.Employee;
 
 public class HasMapExample {
+	//String is best as a key since it has hashcode calculate once ,wrapper classes already has compareTo implemented
+	//HasMap  - Not sync , does not maintain insertion order,not sorted, allows one null key, faster(used only in case of no sync required)
+	//HashTable -synchronized ,slow , other properties are same as HashMap(used only in case of  sync required)
+	//TreeMap- Sorted, navigable , not sync, no null keys (used only in case of finding higher key ,lower key)
+	//object/key must be comparable and should have duplicate avoidance logic in case of user defined objects
+	//LinkedHashMap -single null key
+
 	private static final Logger logNow = 	Logger.getLogger(HasMapExample.class);
 
 	public static void main(String[] args) {

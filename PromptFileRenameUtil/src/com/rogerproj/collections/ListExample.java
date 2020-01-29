@@ -10,6 +10,9 @@ import com.rogerproj.model.Employee;
 
 public class ListExample {
 	private static final Logger logNow = 	Logger.getLogger(ListExample.class);
+	
+	//ArrayList -index based dynamic array - 10 ,load factor 100%, copies all elements to new array, not sync 
+	//maintains insertion order
 
 	public static void main(String[] args) {
 		logNow.debug("Testing log4j start....");
@@ -39,7 +42,6 @@ public class ListExample {
 		for(Employee e: empList){
 			logNow.debug("For through all the objects in arraylist " +e.getEmpManager());
 		}
-
 		logNow.debug("empList.size() " +empList.size());
 		logNow.debug("empList.get(0) " +empList.get(0));
 		logNow.debug("empList.get(1) equals " +empList.get(1).equals(new  Employee(102,"Second Employee", "IT","Prashant Rai") ));	

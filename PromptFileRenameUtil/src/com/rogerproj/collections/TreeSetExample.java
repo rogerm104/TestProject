@@ -10,7 +10,9 @@ import org.apache.log4j.Logger;
 import com.rogerproj.model.Employee;
 
 class empCompatator implements Comparator<Employee>{
-
+	//TreeSet - elements are sorted based on type if user defined object use comparable/comparator interface,not sync
+	//no duplicates and does maintains the insertions order
+	//object/key must be comparable and should have duplicate avoidance logic in case of user defined objects
 	//0- Remove duplicates
 	//1- swap positions for sorting
 	//-1- no changes
