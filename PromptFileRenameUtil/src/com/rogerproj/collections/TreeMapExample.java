@@ -1,7 +1,6 @@
 package com.rogerproj.collections;
 
 import java.util.Comparator;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
@@ -48,7 +47,7 @@ public class TreeMapExample {
 		Phone phone6 =  new Phone(119,"Nokia 3310","Nokia",3010);
 		Phone phone7 =  new Phone(119,"Nokia 3310","Nokia",3010);
 
-		Map<Phone,String> phoneMap = new TreeMap<>(new PhoneCompatator());
+		TreeMap<Phone,String> phoneMap = new TreeMap<>(new PhoneCompatator());
 		TreeMap<Phone,String> phoneMap_implClass = new TreeMap<>();
 
 		phoneMap.put(phone1, "Samusng Note");
