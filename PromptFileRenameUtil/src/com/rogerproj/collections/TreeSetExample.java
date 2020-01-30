@@ -2,6 +2,8 @@ package com.rogerproj.collections;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -14,6 +16,7 @@ class empCompatator implements Comparator<Employee>{
 	//no duplicates and does maintains the insertions order
 	//object/key must be comparable and should have duplicate avoidance logic in case of user defined objects
 	//0- Remove duplicates
+	//does not allow null
 	//1- swap positions for sorting
 	//-1- no changes
 	@Override
@@ -41,11 +44,15 @@ public class TreeSetExample {
 
 		Set<String> tset =new TreeSet<String>();
 		tset.addAll(Arrays.asList(strArr));
-		logNow.debug("TreeSet Size...."+tset.size());
+		logNow.debug(new Date()+" TreeSet Size...."+tset.size());
 
 		for(String s: tset){
 			logNow.debug("Printing contents of Teeset...."+s.toString());
+			if(s.equalsIgnoreCase("the")){				
+				logNow.debug("Removing entry from set "+tset.remove(s));
+			}
 		}
+		logNow.debug(new Date()+" TreeSet Size...."+tset.size());
 
 		Employee emp1 = new Employee();
 		emp1.setEmpID(101);
@@ -65,9 +72,16 @@ public class TreeSetExample {
 		tsetEmp.add(emp3);
 		tsetEmp.add(emp4);
 		tsetEmp.add(emp5);
+		//tsetEmp.add(null);
 
-		for(Employee e: tsetEmp){
-			logNow.debug("Printing Object based   Treeset...."+e.getEmpID());
+		Iterator<Employee> itr= tsetEmp.iterator();
+		
+		while(itr.hasNext()){
+			logNow.debug("Printing using ITerator  Object based   Treeset...."+itr.next());
+			itr.remove();
 		}
+		
+		logNow.debug(new Date()+" TreeSet Size...."+tset.size());
+
 	}
 }

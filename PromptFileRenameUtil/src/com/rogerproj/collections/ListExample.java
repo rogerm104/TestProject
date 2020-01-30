@@ -14,6 +14,7 @@ public class ListExample {
 	
 	//ArrayList -index based dynamic array - 10 ,load factor 100%, copies all elements to new array, not sync 
 	//maintains insertion order
+	//cannot remove elements using for loop causes concurrent modification use iterator.remove()
 
 	public static void main(String[] args) {
 		logNow.debug("Testing log4j start....");
@@ -51,9 +52,9 @@ public class ListExample {
 
 		for(Employee e: empList){
 			logNow.debug("For through all the objects in arraylist " +e.getEmpManager());
-			if(e.equals(emp1)){
-				//logNow.debug("Removing "+emp1);
-				//empList.remove(emp1);
+			if(e.equals(emp2)){
+			//	logNow.debug("##Removing using for "+emp2);
+			//	empList.remove(emp2);
 				//causes concurrent modification exception
 			}
 		}

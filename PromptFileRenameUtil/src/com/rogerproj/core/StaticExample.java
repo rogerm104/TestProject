@@ -33,7 +33,9 @@ public class StaticExample {
 		logNow.debug( new Date()+" Getting Static method Output "+new StaticExample().getVarStaticValue());
 		StaticExample.nestedclass obj = new StaticExample.nestedclass();
 		logNow.debug( new Date()+" Getting Static method Output of nested static class "+obj.getVarStaticValue());
-		 List<Double> doublelist = new ArrayList<Double>();
+		 
+		
+		List<Double> doublelist = new ArrayList<Double>();
 		 
 		 for(int i=0;i<100000000;i++){
 			 try {
