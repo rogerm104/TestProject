@@ -3,6 +3,7 @@ package com.rogerproj.collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -10,6 +11,7 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 
 import com.rogerproj.model.Employee;
+import com.rogerproj.model.Phone;
 
 public class HashMapExample {
 	//String is best as a key since it has hashcode calculate once ,wrapper classes already has compareTo implemented
@@ -17,7 +19,8 @@ public class HashMapExample {
 	//HashTable -synchronized ,slow , other properties are same as HashMap(used only in case of  sync required)
 	//TreeMap- Sorted, navigable , not sync, no null keys (used only in case of finding higher key ,lower key)
 	//object/key must be comparable and should have duplicate avoidance logic in case of user defined objects
-	//LinkedHashMap -single null key
+	//LinkedHashMap -single null key-failFast - best suited when client will send some data and you want to 
+	//keep it in same order
 
 	private static final Logger logNow = 	Logger.getLogger(HashMapExample.class);
 
@@ -54,9 +57,12 @@ public class HashMapExample {
 			logNow.debug("e.getValue() " + e.getValue());					
 		}	
 		//Key set
-		Set<Employee> empSet = empMap.keySet();
-		for(Employee e :empSet){
-			logNow.debug("e.getValue() " + empMap.get(e));							
+		Iterator<Employee> empSet = empMap.keySet().iterator();
+		
+		while(empSet.hasNext()){
+			if(empSet.next().equals(emp4)){
+			//	empSet.remove();
+			}
 		}
 		
 		
@@ -64,6 +70,12 @@ public class HashMapExample {
 		Iterator<Map.Entry<Employee,String>> it =  empMap.entrySet().iterator();
 		while(it.hasNext()){
 			 
+			if(it.next().getKey().equals(emp4)){
+				it.remove();
+			}
+			
+			
+			
 			Map.Entry<Employee,String> entry = it.next();
 			logNow.debug(new Date() + " NEW entry.getKey() " + entry.getKey());							
 			logNow.debug(new Date() + " entry.getValue() " + entry.getValue());	
@@ -84,6 +96,45 @@ public class HashMapExample {
 	//	logNow.debug("mapSize " + empMap.size());	
 	//	String d=empMap.remove(emp1);	
 	//	logNow.debug("mapSize " + empMap.size() + " String d = "+d);	
+		Phone phone1 =  new Phone(115,"Samusng note 10","Samsung",50000);
+		Phone phone2 =  new Phone(101,"OnePlus 5T","OnePlus",35000);
+		Phone phone3 =  new Phone(119,"Nokia 3310","Nokia",3310);
+		Phone phone4 =  new Phone(145,"Samusng Galaxy","Samsung",45000);
+		Phone phone5 =  new Phone(105,"iPhone 11","Apple",85000);
+		Phone phone6 =  new Phone(119,"Nokia 3310","Nokia",3010);
+		Phone phone7 =  new Phone(119,"Nokia 3310","Nokia",3010);
+		
+		
+		Map<Phone,String> lHashMap = new LinkedHashMap<>();
+		lHashMap.put(phone1, "Samusng Note");
+		lHashMap.put(phone2, "Oneplus 5T");
+		lHashMap.put(phone3, "Nokia 3310");
+		lHashMap.put(phone4, "Samusng Galay");
+		lHashMap.put(phone5, "iPhone 11");
+		lHashMap.put(phone6, "Nokia 3310_1");
+		lHashMap.put(phone7, "Nokia 3310_2");
+		Iterator<Phone> PhnlhmIt =lHashMap.keySet().iterator();
+		logNow.debug(new Date() +" lHashMap " + lHashMap.size());
+
+		while(PhnlhmIt.hasNext()){
+			
+			if (PhnlhmIt.next().equals(phone1)){
+				//PhnlhmIt.remove();
+				logNow.debug(new Date() +" removing " );
+			}
+		}
+		
+		 Iterator<Entry<Phone, String>> entrysetItr= lHashMap.entrySet().iterator();		 
+		 while(entrysetItr.hasNext()){
+			  Entry<Phone, String> entry=entrysetItr.next();
+				logNow.debug(new Date() +" priting Key "+entry.getKey());
+				logNow.debug(new Date() +" priting value "+entry.getValue());
+				if(entry.getKey().equals(phone5)){
+					entrysetItr.remove();
+				}
+		 }
+		logNow.debug(new Date() +" lHashMap " + lHashMap.size());
+
 
 	}   
 }

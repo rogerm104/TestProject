@@ -28,6 +28,7 @@ public class StaticExample {
 
 	private static final Logger logNow = 	Logger.getLogger(StaticExample.class);
 
+
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		logNow.debug( new Date()+" Getting Static method Output "+new StaticExample().getVarStaticValue());
@@ -38,14 +39,9 @@ public class StaticExample {
 		List<Double> doublelist = new ArrayList<Double>();
 		 
 		 for(int i=0;i<100000000;i++){
-			 try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			 doublelist.add(Math.random());
+		//doublelist.add(Math.random());
 
+		
 		 }
 		 System.out.println("done");
 		

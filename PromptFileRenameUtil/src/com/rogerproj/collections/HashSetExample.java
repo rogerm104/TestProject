@@ -3,6 +3,8 @@ package com.rogerproj.collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 
@@ -16,6 +18,7 @@ public class HashSetExample {
 	//internal working same as Hashmap
 	//HashSet allows null value
 	//Unlike other set it does not use comparator for sorting
+	//cannot remove elements from set concurrently/use iterator to remove
 	private static final Logger logNow = 	Logger.getLogger(HashSetExample.class);
 
 	public static void main(String[] args) {
@@ -46,6 +49,31 @@ public class HashSetExample {
 			phonItr.remove();
 		}
 		logNow.debug(new Date() +" Size of  HashSet After "+hashSetEx.size() );
+
+			
+		Set<Phone> lHashSet = new LinkedHashSet<>();
+		lHashSet.add(phone1);
+		lHashSet.add(phone2);
+		lHashSet.add(phone3);
+		lHashSet.add(phone4);
+		lHashSet.add(phone5);
+		lHashSet.add(phone6);
+		lHashSet.add(phone7);
+	//	lHashSet.add(null);
+		
+		logNow.debug(new Date() +" Size of  LinkedHashSet After "+lHashSet.size() );
+		Iterator<Phone> lhsIt= lHashSet.iterator();
+		while(lhsIt.hasNext()){
+			if(lhsIt.next().equals(phone5)){
+				//lHashSet.remove(phone5);-fails
+				lhsIt.remove();
+				logNow.debug(new Date() +"Removing element=>> " );
+			}
+		}
+		Iterator<Phone> newIt= lHashSet.iterator();
+		while(newIt.hasNext()){
+			logNow.debug(new Date() +"lHashSet after=>> "+ newIt.next() );
+		}
 
 	}
 	

@@ -19,6 +19,9 @@ class empCompatator implements Comparator<Employee>{
 	//does not allow null
 	//1- swap positions for sorting
 	//-1- no changes
+	//*LinkedHashSet
+	//LinkedHashSet- Removes duplicates and maintains insertion order
+	
 	@Override
 	public int compare(Employee arg0, Employee arg1) {
 		if(arg0.getEmpID()==arg1.getEmpID()&&
@@ -82,6 +85,6 @@ public class TreeSetExample {
 		}
 		
 		logNow.debug(new Date()+" TreeSet Size...."+tset.size());
-
+		
 	}
 }

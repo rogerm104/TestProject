@@ -115,7 +115,7 @@ public class ListExample {
 			Phone phone7 =  new Phone(119,"Nokia 3310","Nokia",3010);
 			
 			//it starts with one and than load factor of 100% increments by 1
-			List<Phone> LlinklistOfPhones = new LinkedList<>();
+			LinkedList<Phone> LlinklistOfPhones = new LinkedList<>();
 			LlinklistOfPhones.add(phone1);
 			LlinklistOfPhones.add(phone2);
 			LlinklistOfPhones.add(phone3);
@@ -133,7 +133,7 @@ public class ListExample {
 			logNow.debug("LlinklistOfPhones.size() phoneItr " +LlinklistOfPhones.size());
 
 			for (Phone p : LlinklistOfPhones ){
-				
+				p.getPhonePrice();
 			}
 		}	
 	}
