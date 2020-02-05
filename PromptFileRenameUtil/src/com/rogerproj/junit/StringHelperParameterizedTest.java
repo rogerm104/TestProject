@@ -23,7 +23,6 @@ public class StringHelperParameterizedTest {
 		this.input=input;
 		this.expectedOutput=expectedOutput;
 	}
-
 	@Parameters
 	public static Collection<String[]> getParmatrisedInputs(){
 		String[][] inputs={{"TEST","TEST"},
@@ -35,7 +34,6 @@ public class StringHelperParameterizedTest {
 				{"AARON","RON"}
 		};
 		return Arrays.asList(inputs);
-
 	}
 
 	@Test
