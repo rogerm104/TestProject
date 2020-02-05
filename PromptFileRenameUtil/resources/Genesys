@@ -1,0 +1,509 @@
+https://securefiletransferuat.citigroup.com/  
+servibs/Servion123
+
+
+
+How Do Voice Applications Work?
+Just as one uses HTML to create visual applications, VoiceXML is a mark-up language one uses
+ to create voice applications. With a traditional web page, a web browser will make a request 
+ to a web server, which in turn will send an HTML document to the browser to be displayed visually
+ to the user. With a voice application, it's the VoiceXML interpreter that sends the request to the
+ web server, which will return a VoiceXML document to be presented as a voice application via a 
+ telephone. What makes VoiceXML so powerful is that all of the most popular tools for making web 
+ pages are available for making voice applications. Developers can use technologies they are 
+ already familiar with such as JavaScript, JSP and ASP.NET/C# 
+to generate exciting new voice applications.
+The "Big Picture"
+
+frame|none
+
+Composer is a fully featured VXML application development tool. Users can develop, debug and test their
+ applications in its Integrated Development Environment (IDE) that provides developer-friendly features 
+ to test and debug VXML applications and server side web pages. Once the application is ready, it can be
+ exported or manually deployed using an exported package onto an application server/web server
+ like Tomcat or Microsoft IIS. Once deployed, GVP can access the voice application’s VXML pages 
+ and any server side pages (JSP/ASP.NET) using HTTP.
+
+When a call comes in to GVP, GVP determines the location of the VXML application through its
+ provisioning data. It then fetches VXML page(s) and uses its VXML engine to execute them. 
+ The results are played back to the caller on his/her phone. Any server side pages that access
+ databases or web services or other server side pages are executed on the application server/ web server
+ through server side constructs implemented by Composer.
+
+During development, Composer can use its bundled Tomcat or a local installation of Microsoft IIS
+ as the web server and make test calls to the application right through GVP from within the IDE.
+ This feature provides a quick way to test applications by removing the need to of deploy applications 
+ to another server and then point GVP to that location.
+
+Once the application is deployed in production, Composer is no longer in the picture. The application 
+is usually deployed on its own dedicated web server and application server from where it is accessed 
+by GVP. The web/application server provides access to all pages and scripts that make up the 
+application and executes any server side pages of the application.
+ 
+ 
+Routing application - 
+Orchestration Platform  ORS  exucutes scxml scripts- open standard based platform uses SCXML engine 
+URS- Universal routing soln- Distrubutes voice and multimedia intreactions intelignetly - Provies support
+ to ORS for routing functions
+
+
+Composer :8.1.3 
+Voice - VXML /Callflows
+Route - Workflows /Routing statergies
+Vxml2.1, ccxml1.0,grxml 1.0
+scxml1.0
+Genesys voice platfrom  GVP 8.1 / ORS 8.0 /NGI interpreter Next Generation
+Interpreter
+For context servies: Universal context Server context Service 8.1 
+
+Project Structure/Directories
+A Composer Project (Java or .NET) will contain some or all of these subfolders depending on the type
+of Project:
+• App_Code -- .NET Composer Projects only. This folder will be empty by default as
+Composer bundles all the C# classes in to the ComposerBackend.dll file. Custom C# classes
+will also go into this folder.
+• bin -- Any libraries used in a .NET Composer Project go here.
+• Callflows -- Folder for storing all the callflow diagrams (.callflow files)• db -- Database connection.properties and .sql files are stored here.
+• include -- Composer-provided standard include files used by Backend logic blocks.
+Custom JavaScript files (.js) can be included in a routing application by placing the file(s) in the
+include/user folder. Re-generating code for all IPD diagrams in the project is required after
+placing the files. The JavaScript functions in the specified .js file can then be used from any
+Workflow block that supports writing expressions e.g. the Assign, Branching and ECMASCript
+blocks.
+• META-INF -- Created when you create a new Java Composer Project. It is needed for Java
+and is included when a .war file is exported from Composer. Do not make changes to this
+directory.
+• WEB-INF/lib -- Java Composer Projects only. Folder for external dependency libraries
+such as JAR files. Note: The Tomcat application server should be restarted after changing any
+JAR files in this folder.
+• Interaction Processes -- Folder for storing all the interaction process diagrams
+(.ixnprocess files).
+• Resources -- Folder for the audio and grammar resources.Resources/grammars -- Folder
+for Grammar Builder (.gbuilder files) and GrXML files.
+• Resources/grammars/<language code> -- Place language-specific grammars
+here (such as en-US or es-MX folders).
+• Resources/prompts -- Folder for prompts files.
+• Resources/prompts/<language code> -- Place language-specific prompts
+here. If the application language is changed mid-call using a Set Language block,
+prompts audio resource paths in these language folders will be translated to the current
+language at run time.
+• Scripts -- Folder for user-written ECMAScript. Custom JavaScript files (.js) can be
+included in a voice application by placing the file(s) in the Scripts folder.
+• src-gen -- Folder for the code generation VXML/SCXML files.
+• upgradeReports -- When migrating IRD strategies into Composer, folder for migration
+reports. Also used for reports as result of upgrading Projects and diagrams.
+• src -- Folder for custom code such as backend logic pages written by the user.
+• Workflows -- Folder for storing all the workflow diagrams (.workflow files).
+
+
+Call Trace View
+The Call Trace view displays metrics which describe the events occurring in the application, such as
+recognition events, audio playback, user input, errors and warnings, and application output. An
+example Call Trace view and Toolbar are shown below.
+
+Media_Control_Platform
+GVP 8.1 provides a debugger interface to allow Composer to make direct calls. By default it is turned
+off and you will have to enable it to allow GVP to accept calls from the debugger interface.
+
+http://machineIP:portno/JavaVoiceProjectName/srcgen/CallflowName.vxml
+
+Composer diagrams connect to GAX using the preference login credentials for
+fetching the Audio Resource Management (ARM) parameters or IDs list configured for the tenant as
+described in the Configuration options appendix of the Genesys Adminstrator Extension Deployment
+Guide. The following preferences can be set in the GAX Server Preferences dialog box:
+
+
+Setting Context Services Preferences
+When working with Context Services blocks, you may wish to use online mode. In this mode,
+Composer fetches data from Universal Contact Server during design phase to help you configure the
+blocks. For example, Composer can fetch customer profile attribute names, extension attribute names,
+and so on. You can enable/disable this behavior in the Context Services Preferences page. If the
+Context Services capability is enabled at your site, set preferences as follows:
+
+What is GVP and How Do Voice Apps Work
+The Genesys Voice Platform (GVP) is a VoiceXML-based media server for network service
+providers and enterprise customers.
+
+Types of Variables
+Composer supports the following types of variables for callflow diagrams:
+• System--Pre-defined application variables (System category above) hold Project and
+application-related values. While you cannot delete System variables, you can have your
+application modify the values.
+• User--User-defined custom variables that you create by clicking the Add button in the
+Application Variables dialog box above and selecting User. Your application can delete and
+modify User variables.
+• Input--These are variables supplied as input to the called diagram. Created by clicking the
+Add button in the Application Variables dialog box above and selecting User. During
+runtime, Input variables get auto-filled from the calling context. Typically Input variables are
+created on the SubCallflow side to notify the MainCallflow about the Parameter-passing
+details while designing the application flow. Composer does auto-synchronization of the
+Input variables in the Subdialog block.Input variables are also used on the MainCallflow
+while invoking the VoiceXML application from workflows in case of Voice Treatment
+execution - computer telephony integration (CTI) scenario (Play Application).
+• MainCallflow--Automatically filled from either session.com.genesyslab.userdata or
+session.connection.protocol.sip.requesturi based on the Non-CTIC or CTIC flow.
+• SubCallflow--Automatically filled from the VXML subdialog-invoking methodology.
+
+
+
+Assign >> Assign a computed value/expression or an entered value to a variable
+Note: Function getSIPHeaderValue(headername) returns the SIP header value associated with the
+given SIP headername. You may wish to use this function with the Assign block.
+using the Assign block and
+Expression Builder to parse a JSON string and assign the service data to a variable
+For callflows, invalid ECMAScript expressions may raise the following exception event:
+error.semantic.
+• For workflows, invalid ECMAScript expressions may raise the following exception events:
+error.script.SyntaxError, and error.script.ReferenceError.
+
+
+
+Branching -Specify multiple application routes based on a branching condition
+You can open Expression Builder from the Condition property and access the following date/time
+URS functions (Data Category=URS Functions > Data Subcategory=genesys):
+• _genesys.session.timeInZone(tzone)
+• _genesys.session.dayInZone(tzone)
+• _genesys.session.dateInZone(tzone)
+• _genesys.session.day.Wednesday
+• _genesys.session.day.Tuesday
+• _genesys.session.day.Thursday
+• _genesys.session.day.Sunday
+• _genesys.session.day.Saturday
+• _genesys.session.day.Monday
+• _genesys.session.day.Friday
+
+
+
+Disconnect- Explicitly hang-up a phone call
+
+End FCR -Indicate the end of a recording segment
+
+Entry>>Begin an application. Only one Entry block can be present in each application.Sets global
+Note on No Input and No Match Events
+When selecting exceptions for the Entry block, use both
+
+
+error (exception) handlers. Defines all global application-level properties, global
+variables (which appear in the list of available variables for other blocks in the diagram),
+and global commands. Sets default application scripts and parameters.
+
+com.genesyslab.composer.toomanynoinputs /
+com.genesyslab.composer.toomanynomatches and noinput/nomatch to catch all
+the possible no input and no match events. The selection of
+com.genesyslab.composer.toomanynoinputs / com.genesyslab.composer.toomanynomatches is
+required when noinput / nomatch exceeds the maximum retries in the lower block. The selection of
+noinput / nomatch is required when the lower block does not retry at all.
+• com.genesyslab.composer.toomanynoinputs occurs when the number of no
+inputs exceeds the maximum retries in the Menu, Input, DBInput, and Record blocks, and the
+blocks do not have local noinput exception ports.
+• com.genesyslab.composer.toomanynomatches occurs when the number of no
+matches exceeds the maximum retries in the Menu, Input, DBInput, and Record blocks, and
+the blocks do not have a local nomatch exception port.
+Application Root Property
+You have the option to specify a VXML file to be used as an application root document allowing
+multiple callflows to share variables. Background: Starting with 8.1.1, each Composer Project can
+have (at most) one root document (VXML file). If a Project has no root document, each callflow is its
+own stand-alone application. If a Project contains a root document, the set of callflows with Entry
+blocks that reference that root document make up the application.
+• If a callflow or sub-callflow references an application root document, the variables specified
+in the application root become available for selection in all dialogs in that diagram.
+• Variables defined in the application root directly under the <vxml> tag become available as
+global variables to callflows and sub-callflows that access them.
+
+
+Global Commands Property
+The Global Commands property sets rootmap elements for the entire application. A rootmap element
+is a phrase (user-defined phrase or external grammar) and/or tone the application reacts to at any time
+the application is running. Use the Global Commands property to set rootmap elements for the entire
+application. The application uses these rootmap elements as global grammars (subsets of a spoken
+language that callers are expected to use) in each Input block. Composer creates one outport for each
+rootmap element; the outport specifies the application path in the event to which the rootmap element
+is matched. Use the Entry block Global Commands property to set rootmap elements for a subcallflow
+as well. Note: The RootMap elements defined in the Entry block do not apply to blocks inside a
+subcallflow. To add, delete, or arrange global phrases, DTMF keys, and grammars:
+
+Global Properties Property
+This property allows suppression of data within the Nuance 9 platform ASR logs. For more
+information on this property, see the Properties topic on the Genesys Voice Platform wiki. Use Global
+Properties to select global settings for VXML properties, Automatic Speech Recognition vendorspecific
+properties or Text-to-Speech vendor-specific properties. To enter properties and values:
+
+Scripts Property
+Use the Scripts property for including custom JavaScript includes into the application. The JavaScript
+functions in the specified .js file can then be used in the Assign or Branching blocks in the expression.
+1. For this property, enter the filename of your file (for example: script.js). If there are multiple
+files to be loaded, you can delimit by using the | character; for example: script1.js|script2.js.
+2. Then place the custom ECMAScript file in the Scripts subfolder of your project.
+
+
+When you define and initialize a variable that is expected to be played as a date later on in the
+callflow, define the value using the following format: yyyyymmdd. Example: MyDate=20090618.
+You must use this format; Composer does not perform any conversions in this case. When you define
+and initialize a variable that is expected to be played as a time later on in the callflow, define a 12
+hour-based value using the following format: hhmmssa or hhmmssp. Example: MyTime=115900a or
+MyTime=063700p. Define a 24 hour-based value using the following format: hhmmssh Example:
+MyTime=192000h. You must use this format; Composer does not perform any conversions in this
+case. If variables are set as part of provisioning by the Genesys VoiceXML provisioning system, and
+if these variables have the same names as variables set in the Variables property dialog box, the
+VoiceXML provisioning system values take precedence over the global variables set here. Many
+blocks enable the use of variables rather than static data. For example, the Prompt block can play the
+value of a variable as Text-to-Speech. Variables whose values are to be used in other blocks must be
+declared here so that they appear in the list of available variables in other blocks. The value collected
+
+System Variables
+These variables apply only to the Entry block, unless otherwise indicated.
+• APP_LANGUAGE--Holds the application language setting. The value should be the RFC
+3066 language tag of an installed language pack. Examples of valid RFC 3066 language tags
+include en-US and fr-FR. This setting also acts as a default language for the application. This
+variable may be set using the Set Language block for a multilingual application.
+• APP ASR LANGUAGE--Holds the language locale for ASR resources. You must define
+this variable if the application needs to use a different language locale for ASR from TTS
+resources.
+• GRAMMARFILEDIR--Gives the relative path from the application to the directory that
+contains the grammar files. By default, it is set to ../Resources/Grammars. If a voice
+application supports multiple languages, you can enable the application to switch between
+them, by changing the value of this variable. In the Subcallflow_Start block, the
+GRAMMARFILEDIR global variables are not defined by default. This allows the
+subcallflows to inherit the value of this variable from the main callflow. If the subcallflow
+overrides this value, the variable can be defined in the Subcallflow_Start block.
+• VOXFILEDIR--Gives the relative path in the application to the directory that contains the
+audio files (.vox/.wav). By default, it is set to ../Resources/Prompts. If a voice application
+supports multiple languages, you can enable the application to switch between them, by
+changing the value of this variable. In the Subcallflow_Start block, the VOXFILEDIR global
+variables are not defined by default. This allows the subcallflows to inherit the value of this
+variable from the main callflow. If the subcallflow overrides this value, the variable can be
+defined in the Subcallflow_Start block.
+• SCRIPTSDIR--Default location for JavaScript files
+• EnableReports--Enables VAR reporting. (Reporting blocks)
+• EnableSNMP--Enables the SNMP block, if present in the application
+• CallUUID--Session connection Universal ID
+• GVPSessionID--The Genesys Userdata Session ID
+• LAST_EVENT_NAME--Stores the name of the last event or error that was handled in the
+Entry block.
+• LAST_EVENT_MSG--Stores the message of the last event or error that was handled in the
+Entry block
+• LAST_EVENT_URL--Stores the URL of the last event or error that was handled in the
+Entry block.
+• LAST_EVENT_ELEMENT--Stores the element name of the last event or error that was
+handled in the Entry block
+• LAST_EVENT_LINE--Stores the line number of the last event or error that was handled in
+the Entry block
+• EnableFCR--A flag for enabling Full Call Recording
+
+
+
+Exit -End the application
+Using an Exit Block Inside a Subcallflow
+The Subdialog block is used to create subcallflows, which are VoiceXML subdialogs. An Exit block
+terminates the subcallflow application. If the control has to be returned to the main application, then
+the Return Mode property should be set to true
+Result Property
+This property is visible only for subcallflows. Click the down arrow and select one of the following
+to be used for VAR reporting:
+• UNKNOWN
+• SUCCESS
+• FAILED
+
+
+
+Go To >>Direct the application to a specific URL
+Type
+Sets the type of the destination application. There are two options:
+• URL--The destination application can be found at the location specified in the Uri property.
+• ProjectFile--The destination can be another location inside the same Composer Project.
+
+
+Grammar-Menu Uses Grammar Builder files to determine the input options
+The Menu block has eight local exception events.
+• error
+• error.noresource
+• maxspeechtimeout
+• noinput
+• nomatch
+• error.badfetch.grammar.uri
+• error.badfetch.grammar.syntax
+• error.badfetch.grammar.load
+Security
+When the Security property is set to true, data for this block is treated as private. GVP will consider
+the data entered by the caller for this block as sensitive and will suppress it in platform logs and
+metrics. To assign a value to the Security property:
+1. Select the Security row in the block's property table.
+2. In the Value field, select true or false from the drop-down list
+
+
+Input -Accepts DTMF or speech input from callers
+
+The Input block has eight exception events:
+• error
+• error.noresource
+• maxspeechtimeout
+• noinput
+• nomatch
+• error.badfetch.grammar.uri
+• error.badfetch.grammar.syntax
+• error.badfetch.grammar.load
+Grammar Type Property
+To assign a value to the Grammar Type property:
+1. Select the Grammar Type row in the block's property table.
+2. In the Value field, select one of the following from the drop-down list:
+• builtinBoolean
+• builtinCurrency
+• builtinDate
+• builtinDigits
+• builtinNumber
+• builtinPhone
+• builtinTime
+• externalGrammar
+
+Input Grammar Dtmf Property
+Values are the Voice Application Variables described under the Variables You can specify multiple
+grammars by separating the grammars with the "|" character
+The Voice Grammar is sent to the ASR Engine for processing, whereas the DTMF
+grammar is processed by GVP.
+In the Value field, select a value from the drop-down list. You can specify multiple grammars
+by separating the grammars with the "|" character.
+Slot Property
+The Slot property enables you to specify the slot name of the return value from the grammar. If the
+slot name is not specified, it is assumed that the grammar will return the value of a slot having the
+same name as the INPUT block itself. To provide a slot name:
+
+
+Log>>>>Record information about an application
+When used for a callflow, the Log block writes the log to the Genesys Voice Platform logs (Media
+Control Platform) using the VoiceXML <log> tag.
+
+
+Looping -Iterate over a sequence of blocks multiple times
+Use this block to iterate over a sequence of blocks multiple times in the following scenarios:
+1. Iterate over a sequence of blocks based on a self-incrementing counter (FOR).
+2. Iterate indefinitely until an exit condition is met (WHILE).
+3. Iterate over records/data returned by the DB Data block (CURSOR/FOREACH). Also,
+populate variables if variables mapping is defined
+4. Iterate over data returned by Context Services blocks (FOREACH). Also, populate variables
+if Variables Mapping is defined.
+5. Iterate over JSON Array defined in the application.
+PromptCounter block 10 times, the following properties are set:
+1. Counter Initial Value is 1.
+2. Counter Variable Name is Variable(MyCounterVariable).
+3. Counter Max Value is 10.
+
+
+Menu -Collects DTMF and/or speech input from the caller
+• error
+• error.noresource
+• noinput
+• nomatch
+
+
+Prompt -Play specific data to the caller
+Immediate Playback Property
+Important! See Note in Timeout section below.
+• When Immediate Playback is set to true, prompts are played immediately on the execution of
+the prompt without queuing them.
+• When Immediate Playback is set to false (default), the interpreter goes to the transitioning
+state and queues the TTS Prompt until the interpreter waits for an input (such as the Menu,
+Input, Record,and Transfer blocks.
+
+
+Raise-Event Throw custom events
+
+
+Record -Record voice input from the caller
+Web Server Record File Name Property
+User-defined variable (to be assigned) containing the file name of the recorded file located in the
+folder as specified in the Capture Location property.
+1. Select the Web Server Record File Name row in the block's property table.
+2. In the Value field, click the down arrow and select a variable
+Capture Filename Type Property
+The Capture Filename Type property indicates the type of the filename for saving the recording. To
+assign a value to the Capture Filename Type property:
+Capture Location Property
+The Capture Location property specifies the destination path on the Web Application server where the
+recording is to be saved. If no location is specified, the recordings are saved in the working directory
+the web application server process. This location may change depending on the web server
+environment, and therefore, it is recommended that a fixed location is always specified in the Capture
+Location property. To specify a capture (recording) location:
+1. Click the Capture Location row in the block's property table.
+2. Type a file path where the recording is to be saved that is located on the web server hosting
+the application. If the web server is running on Linux, a UNIX-style path can be entered.
+Composer will not validate the path.
+
+
+Release ASR Engine-Control when the ASR engine(s) being used in the current session will be released
+
+Set Language -Changes the current active language from that set in the Entry block or a previous Set
+The Set Language block changes the current active language from that set in the Entry block or a
+previous Set Language block. The language specified will be used for all subsequent prompts and
+grammars. This updates the APP LANGUAGE and APP ASR LANGUAGE global variables to the
+specified values. All audio and grammar resources will get picked from the specified language folder
+under the Resource folder of the Composer Project. Set Language is only applicable for audio and
+grammar files in Composer. Note: Locales that are not defined in Composer must be manually set in
+the diagram?s Assign block. Example: ASR LANGUAGE=?te-IN? Also see topic Developing Multi-
+Lingual Applications. The Set Language block has the following properties: The Set Language block
+has no page exceptio
+
+
+Language block -SNMP Send SNMP traps from the application using the NGI ?dest? extension attribute of the<log> tag
+
+Start FCR -Indicate the start of a recorded audio file
+
+Subdialog -Invoke VoiceXML subdialogs, which are a mechanism for reusing common dialogs andbuilding libraries of reusable applications.
+
+Transfer -Transfer the call to another destination
+Use the Transfer block to transfer the call to another destination. By default, blind transfer is enabled,
+and it has no outports. However, if you enable bridging, the block will have one or more outports. In
+case of user input blocks (Menu, Input, Record, Transfer), Composer adds a global variable of type
+"Block" to the variables list. You can conveniently use this variable for accessing the user input value.
+The Transfer block has the following properties:
+• connection.disconect.hangup
+• connection.disconnect.transfer (supported by default)
+• error (supported by default)
+• error.connection.baddestination (supported by default)
+• error.connection.noauthorization
+• error.connection.noresource
+• error.connection.noroute
+• error.connection
+• error.unsupported.transfer.blind
+• error.unsupported.transfer.consultation
+• error.unsupported.uri
+Application-to-Application Information
+
+Blind is the default setting. The platform redirects the caller to the agent without remaining in the
+connection, and it does not monitor the outcome. Once the caller is handed off to the network, the
+caller's session with the VoiceXML application cannot be resumed. The VoiceXML interpeter throws
+a connection.disconnect.transfer immediately, regardless of whether the transfer was successful or
+not
+
+Bridge causes the platform add the agent to the connection. Document interpretation suspends
+until the transferred call terminates. The platform remains in the connection for the duration of the
+transferred call; listening during transfer is controlled by any included <grammar>s.If the caller
+disconnects by going onhook or if the network disconnects the caller, the platform throws a
+connection.disconnect.hangup event. If the agent disconnects, then transfer outcome is set to
+near_end_disconnect and the original caller resumes her session with the VoiceXML application
+
+
+Consultation causes the consultation transfer to be similar to a blind transfer except that the outcome
+of the transfer call setup is known and the caller is not dropped as a result of an unsuccessful transfer
+attempt. When performing a consultation transfer, the platform monitors the progress of the transfer
+until the connection is established between caller and agent. If the connection cannot be established
+(e.g. no answer, line busy, etc.), the session remains active and returns control to the application. As
+in the case of a blind transfer, if the connection is established, the interpreter disconnects from the
+session, connection.disconnect.transfer is thrown, and document interpretation continues normally.
+
+Methods
+Hkf (Hookflash)
+A Hookflash method indicates a transfer using DTMF digits (RFC 2833).
+Refer
+A Refer method indicates that the transfer is based on a SIP REFER message (RFC 3515).
+
+Transfer Results Property
+There are several types of transfer results supported for applications. When you select a transfer
+result, a corresponding outport node is added to the block to allow specific actions to be taken for that
+condition. Please note that a default outport is always present. The default path is executed if none of
+the selected transfer results are set. The available transfer results are:
+far_end_disconnect (selected by default)
+• noanswer (selected by default)
+• busy (selected by default)
+• near_end_disconnect
+
+299
