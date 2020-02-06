@@ -2,6 +2,16 @@ package com.roger.utils;
 
 	class Test2
 	{
+		//To Reverse a String
+		public static String reverse(String str){
+			String reversed="";
+			char[] localStr=str.toCharArray();
+			for(char c : localStr){
+				reversed=c+reversed;
+			}
+			return reversed;
+		}
+		
 			//To check if string is palindrome
 		   public static  boolean isPalindrome(String s){
 			   boolean flag=true;
@@ -40,6 +50,7 @@ package com.roger.utils;
 		  int num=7;
 		  if(Test2.isPrimeNumber(num)){System.out.println("YES");}else{System.out.println("NO");
 		  }
+		  System.out.println(Test2.reverse("MENDES"));
 		  
 	   }
 	}

@@ -1,0 +1,393 @@
+Collections:
+Base interface Collection implements Iterable 
+Set ,list , Queue extends collectons 
+Map<k,v> does not extend collection interface
+
+Methods:
+
+add()
+remove()
+
+contains()
+containsAll()
+addAdd()
+removeAll()
+reatainAll()
+
+Size()
+isEmpty()
+Clear()
+
+List **>>sition is important and has a parameter in above methods
+ArrayList()> Insertion and deletion are very slow  compare to liked list not threadsafe
+if you access arraylist instance from multiple threads the result may not be the same
+Vector()>Thread safe, basically Araylist all methods are synchornised
+LinkedList()>implements both List and Queue
+
+Set **>> no duplication
+interfaces:  
+SortedSet()- maintains order and sorted 
+NavigableSet() extends SortedSet()-
+Implementation class:
+HashSet()- Does not gurentee order of insertion
+LinkedHashSet()- Maintains of order of insertions
+TreeSet() extends Set SortedSet NavigableSet
+
+
+Map:<K,V> **>>
+size()
+isEmpty()
+ContainsKey()
+Set<Entry<k,v>>
+put(),PutAll()
+get()
+Interface 
+SortedMap -order is gurantee in order of keys
+NavigableMap - Order is mainted along with navigation Key>3 or <6
+
+HashMap() - unsotred and no order, key will null value
+HashTable() - Sync hashmap, does not allow null keys 
+LinkedHashMap()- sorted and ordered, navigable
+ 
+Queue - Mainly used for processing 
+add()
+offer()
+remove() - if empty exceptoin
+Poll() -returnds null if no elements
+Deque()
+add()__first()Last()
+offer()__first()Last()
+BlockingQueue()
+
+Implementation Class:
+PriorityQueue()- natural order 
+Poll()- remove elemet
+Peek()- just peeks it does not remove
+ArrayDaque()
+LinkedBlockingQueue()
+
+
+Hibernate 
+JPA/Hibernate
+
+Session Factory- keeps all the ojects
+Session- conversation
+JDBC
+
+JTA- Java transcation API , allows rollback 
+
+@Entity
+@Table(name="tbl_Person" )
+class Person implements serializable{
+
+@Column(name="name")
+Public String getName(){
+retunn name; 
+}
+@Id @GeneratedValue(Statergy=GenerationType.IDENTITY)
+@Column(name="personID")
+Public String getID(){
+retunn Id; 
+}
+
+}
+
+
+
+
+
+>>A Typical WCF SOAP based webservices would have 
+
+Class Service (Implementation class) : Iservice (interface){
+public String GetAllData (String customerID){
+return "No data Found";
+}
+}
+
+[ServiceContract]
+public interface Iserice {
+[Operation Contract]
+String GetAllData (String customerID)
+}
+
+
+• 3+ years of development and support experience in Contact Center environment
+->> Highlight about industry experience 
+Primary experience has been in Contact center Domain +6 years 
+
+
+• Ability to analyze and/or design call-flows from requirement documentation and workshops
+• Expert knowledge of one or more IVR development environment such as Genesys composer, Avaya or Cisco
+• Hands on experience with Java, Groovy, JavaScript or other languages
+• Working knowledge of telephony technologies including IVR, call routing, Work force management, Call Recording
+• Experience with one or more contact center channels – Voice, Chat, Email, SMS, Callback, Push notifications, Co-Browse
+• knowledge with Enterprise advanced converged communication & VoIP / IP Telephony systems
+• Experience and knowledge with any of web application development, distributed and parallel systems or security software development
+• Experience in programming with Java and J2EE Technologies.
+• Knowledge in programming with VXML and CCXML.
+• Experience in Contact Center Reporting and understanding of the call center metrics
+• Experience with Avaya, Genesys or Cisco IVR systems.
+• Experience with REST & SOAP Web Services technology and Micro services development..
+• Experience in Dev Ops and deployments Tool Chain (JIRA, TeamCity, Jenkins, SVN).
+• Experience with any of the database development with Oracle, SQL Server or DB2 .
+• Knowledge of designing and developing IVR applications on Avaya platform or Genesys Platform
+• Experience with WebSphere/Tomcat application server
+• Understanding or have experience with agile and lean philosophies
+• Bachelor's Degree or relevant experience.
+
+JavaScript:
+-Vairable declaration
+-Types: Var
+-Primitive : String, number ,undefined, null , boolean, 
+-const -  cannot be reassigned
+cannot add a propery on fly
+cannot change property key
+can change property value
+-let - Variables declared with the let keyword can have Block Scope.
+In var Redeclaring a variable inside a block will also redeclare the variable outside the block:
+Redeclaring a variable inside a block will not redeclare the variable outside the block:
+Allowed only in localScope cannnot redeclare variable in global scope
+
+-used of typeof- used for find the variable type
+-Coercion  var i= 1 + "123"= String "1123" auto conversion
+-=== Operator used to check if variable is of same datatype (comparisn with actual type ).
+-== will convert them to string of 2 operands are not the same and compare by default
+- Objects var obj={} --> Objects are free form in javascript
+- to add propery to object 
+var obj={
+	"Name":"Roger"
+	"Age": 21
+	//Nested Object
+	"Address":{
+		"DoorNo":123
+		"Street": "Salt Lake 101"
+		"City":"Panaji"
+	}
+}; 
+to access 
+obj.Name or obj["Name"]
+obj.Address.DoorNo
+
+-can add properties on fly
+obj.EmploymentStatus="Unemployed";
+- === for objects only if they have same peoperties 
+- deleting properties for object delete  obj.Address.DoorNo
+- JavaScript arrays 
+>>var myArray=[1,2,3];
+var points = [];  
+var points = new Array(40, 100);
+var points = new Array(40);  // Creates an array with 40 undefined elements !!!!!
+Array.isArray(array_name);
+>>Access  myArray[0]? 1
+>>length  myArray.length;
+>>Add 	myArray[100]=100;-  will increase len to 100 it only counts only last index
+myArray.push();- adds elecment to last location
+.pop;
+.shift();
+.unshift();
+
+-For Each
+var myArray= ["one","two","Three"];
+For each takes function as argument with 3 params 
+the function will execute times the number of items in array. and pass each element at a time.
+
+myArray.forEach(function(iteam,index,array){
+console.log ("item "+ iteam +" at index "+ index);
+})
+
+
+-Wrapper Objects - String ,Number ,Boolean ,Symbol used to get additional properties like length for String .
+-Function:
+//only inline fuctions needs a function names
+function sayHello(? name){ <-reisters function at this point/ no need to specify var since it already knows
+console.log("Hello" + name);
+}
+Execute : sayHello();<- Executes function at this point
+-annonomous Function: because it does not have name/Functions as values
+//function name need not be mentioned sayHello
+var myFun= function sayHello(){ <-reisters function at this point
+console.log("Hello");
+return "There you Go";
+}
+Execute : myFun();
+prolem if myFun=1;  no longer is function
+>>No overloading .will match only function name  and ignore the rest of values
+>>Return values are always var , can retun objects, no need to defined return type since its already var
+-Functional Programming
+//function to be passed as argument to another function
+var myFun= function (name){ <-reisters function at this point
+return "Hi " + name;
+}
+
+var executor = fuction (f, name){
+f(name);
+};
+
+To execute :
+executor(myFun,"Roger")
+- Function as a property
+
+var myObj= {
+"name":"Roger";
+}
+
+//Add property as function
+myObj.NewPropetryAsFun= function (){
+console.log("NewPropetryAsFun is being executed");
+}
+
+Excute Function:
+myObj.NewPropetryAsFun();
+
+// "this" context use in functions. If you copy an object which make use of its properties in an function thn potentail prolem
+occurs when we refrence with object name like return "Hello Dear "+myObj.name; instead use this.name 
+-Argument array
+arguments is a kind of array which is available to all the function being called , it holds the values in form of array which can be used 
+to further read in a function irrespective of number of arguments the function is expecting.
+
+Math Object
+Date object
+next---------
+Scopes and closures
+objects and protoypes(classes)
+Asyc javascript and callbacks
+Client side frameworks - AngularJs/react/JQuery
+server side framerork-nodeJs/express
+
+Object oriented JAvaScript:
+
+--Closures: Functions using values out side the scope meaning defined outside 
+if there is function withing function which uses 2 vairables one passed and other unkown . For the first pass the function
+will retain the value and the second one will be treated as inner value when called again 2wice .
+
+JS uses lexical scoping means the inner variables in function are not accesible outside but the outer variables are available 
+avaiable to use to inside
+
+--Creating an object using NEW keywork out of function: 
+
+var Person = function(name){
+console.log("Hi " + name)
+this.name = name;
+};
+
+var roger = new Person("Roger");
+console.log("The new person is "+ roger.name);
+
+--Gettters and Setters
+basically getter and setter is a vairlable inside function which uses function to set its innner values using closure 
+
+var Person = function(_name) {
+  this.setPerson = function(name) {
+    _name = name;
+  }
+  this.getPerson = function() {
+    return _name;
+  }
+};
+
+var roger = new Person("Roger"); //Set using innerscore 
+console.log("The new person is " + roger.getPerson()); //Gets _name
+
+
+
+-Template String 
+introduced in ES6 
+var one= 1;
+var two= 2;
+var some = `the sum of ${one} and ${two} is ${one + one} `;
+console.log (some)
+
+- syntax ` ` <-  encloses
+		 ${x}<-  x is value
+		 it converts into string after calculations
+		  
+
+--Spread operator / REST operator with rest parameters
+
+function(arg1, .....arg2)
+.....arg2- will be treated as array with all the other arguments in it.
+
+-Tagged arrays:
+var one= 1;
+var two= 2;
+var some = `the sum of ${one} and ${two} is ${one + one} `;
+console.log (some)
+
+var tagged = function (arg,...vals){
+
+}
+function call:
+tagged`the sum of ${one} and ${two} is ${one + one} `;
+
+Tokenization: 
+reuslt 
+
+arg- > the sum of/ and / is / EmptyString
+vals-> 1,2,3
+
+
+Object - cap o master object in global space has all the generic properties in __proto__ which can be extended to other objects
+-Object.create () used mostly to extend properties of one object to another 
+var Person = function(_name) {
+  this.setPerson = function(name) {
+    _name = name;
+  }
+  this.getPerson = function() {
+    return _name;
+  }
+};
+var Animal = function() {
+};
+console.dir(Person);
+console.dir(Animal);
+Animal.prototype = Object.create(Person.prototype); // extend properties of person to animal
+//console.dir(Person);
+//console.dir(Animal);
+var mixPersonAnimal = new Animal();// further extend properties of Animal to mixPersonAnimal
+console.dir(mixPersonAnimal instanceof Animal);
+console.dir(mixPersonAnimal instanceof Person);
+
+-Prototype Chain
+// Car constructor
+const Car = function() {};
+
+// Set Car's prototype
+Car.prototype = {
+  print() {
+    return 'this is a Car';
+  }
+};
+
+// ToyCar constructor
+const ToyCar = function() {};
+
+// Set ToyCar's prototype to be Car's prototype
+ToyCar.prototype = Object.create(Car.prototype);
+
+// Adding ToyCar's own print method
+ToyCar.prototype.print = function(){
+	return 'this is a ToyCar';
+}
+
+const ToyTransformer = function() {};
+
+// Set ToyCar's prototype to be Car's prototype
+ToyTransformer.prototype = Object.create(ToyCar.prototype);
+
+// Adding ToyCar's own print method
+ToyTransformer.prototype.print = function(){
+	return 'this is a ToyTransformer';
+};
+
+const toyota = new Car();
+const legoCar = new ToyCar();
+const optimusPrime = new ToyTransformer();
+
+console.log(toyota.print());
+console.log(legoCar.print());
+console.log(optimusPrime.print());
+-CALL
+.call(), .apply() and .bind()
+used to access variale or function of another object
+
+

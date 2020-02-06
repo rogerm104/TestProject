@@ -5,129 +5,129 @@ import java.util.StringTokenizer;
 
 public class Test4 {
 	public static void main(String[] args){
-		
-		 String input="PS&lt;http://c4t26225.itcs.hpecorp.net:8080/prompts/DTMFMenu_TEST/en_Opt1.wav&gt;;PS&lt;http://c4t26225.itcs.hpecorp.net:8080/prompts/DTMFMenu_TEST/en_Opt2.wav&gt;;PS&lt;http://c4t26225.itcs.hpecorp.net:8080/prompts/DTMFMenu_TEST/en_Opt3.wav&gt;;PS&lt;http://c4t26225.itcs.hpecorp.net:8080/prompts/DTMFMenu_TEST/en_Opt4.wav&gt;;";
-		 ArrayList promptList = stringToPrompt (input);
+
+		String input="PS&lt;http://c4t26225.itcs.hpecorp.net:8080/prompts/DTMFMenu_TEST/en_Opt1.wav&gt;;PS&lt;http://c4t26225.itcs.hpecorp.net:8080/prompts/DTMFMenu_TEST/en_Opt2.wav&gt;;PS&lt;http://c4t26225.itcs.hpecorp.net:8080/prompts/DTMFMenu_TEST/en_Opt3.wav&gt;;PS&lt;http://c4t26225.itcs.hpecorp.net:8080/prompts/DTMFMenu_TEST/en_Opt4.wav&gt;;";
+		ArrayList promptList = stringToPrompt (input);
 	}
-	
+
 	public static ArrayList stringToPrompt( String paramString)
-	  {
-	    System.out.println("PromptHelper.stringToPrompt: Prompt String:[" + paramString + "].");
-	    ArrayList localArrayList = new ArrayList();
-	    String str1 = null;
-	    String str2 = null;
-	    while (paramString.length() > 0)
-	    {
-		 System.out.println( "#1 Enter while: paramStringlen="+paramString.length());
+	{
+		System.out.println("PromptHelper.stringToPrompt: Prompt String:[" + paramString + "].");
+		ArrayList localArrayList = new ArrayList();
+		String str1 = null;
+		String str2 = null;
+		while (paramString.length() > 0)
+		{
+			System.out.println( "#1 Enter while: paramStringlen="+paramString.length());
 
-	      int i = paramString.indexOf("&gt;;");
-	      System.out.println( "#2 Enter while: i="+i);
-	      System.out.println( "PromptHelper.stringToPrompt: index:[" + i + "].");
-	      String str3;
-	      StringTokenizer localStringTokenizer;
-	      PromptType localPromptType;
-	      if (i > -1)
-	      {
-		    System.out.println( "#3 Enter IF i="+i);
-	        str3 = paramString.substring(0, i);
-		    System.out.println( "#4 Enter IF str3="+str3);
-	        paramString = paramString.substring(i + 5);
-		    System.out.println( "#5 Enter IF paramString="+paramString);
-	        localStringTokenizer = new StringTokenizer(str3, "&lt;");
-		    System.out.println( "#6 Enter IF str3="+str3);
-		  System.out.println( "#7 Enter IF localStringTokenizer=####");
-		  String[] Str1Str2=str3.split("&lt;");
-		  System.out.println( "#8 Exit from  IF localArrayList="+Str1Str2.length);
-		  if(Str1Str2.length>1){ 
-          localPromptType = new PromptType();
-          str1 = Str1Str2[0];
-          System.out.println("PromptHelper.stringToPrompt: promptType str1:[" + str1 + "].");
-          localPromptType.setType(str1);
-          str2 = Str1Str2[1];
-          System.out.println( "PromptHelper.stringToPrompt: promptValue str2:[" + str2 + "].");
-          localPromptType.setValue(str2);
-          localArrayList.add(localPromptType);
-		  }
-		  System.out.println( "#8 Exit from  IF localArrayList="+localArrayList.size());
-	      }
-	      else
-	      {
-			  System.out.println( "#9 Break while");
-	    	  break;
-	      }
-	    }
-	    return localArrayList;
-	  }
-	
-	
-	
+			int i = paramString.indexOf("&gt;;");
+			System.out.println( "#2 Enter while: i="+i);
+			System.out.println( "PromptHelper.stringToPrompt: index:[" + i + "].");
+			String str3;
+			StringTokenizer localStringTokenizer;
+			PromptType localPromptType;
+			if (i > -1)
+			{
+				System.out.println( "#3 Enter IF i="+i);
+				str3 = paramString.substring(0, i);
+				System.out.println( "#4 Enter IF str3="+str3);
+				paramString = paramString.substring(i + 5);
+				System.out.println( "#5 Enter IF paramString="+paramString);
+				localStringTokenizer = new StringTokenizer(str3, "&lt;");
+				System.out.println( "#6 Enter IF str3="+str3);
+				System.out.println( "#7 Enter IF localStringTokenizer=####");
+				String[] Str1Str2=str3.split("&lt;");
+				System.out.println( "#8 Exit from  IF localArrayList="+Str1Str2.length);
+				if(Str1Str2.length>1){ 
+					localPromptType = new PromptType();
+					str1 = Str1Str2[0];
+					System.out.println("PromptHelper.stringToPrompt: promptType str1:[" + str1 + "].");
+					localPromptType.setType(str1);
+					str2 = Str1Str2[1];
+					System.out.println( "PromptHelper.stringToPrompt: promptValue str2:[" + str2 + "].");
+					localPromptType.setValue(str2);
+					localArrayList.add(localPromptType);
+				}
+				System.out.println( "#8 Exit from  IF localArrayList="+localArrayList.size());
+			}
+			else
+			{
+				System.out.println( "#9 Break while");
+				break;
+			}
+		}
+		return localArrayList;
+	}
+
+
+
 	public static ArrayList stringToPromptNew( String paramString)
-	  {
-	    System.out.println("PromptHelper.stringToPrompt: Prompt String:[" + paramString + "].");
-	    ArrayList localArrayList = new ArrayList();
-	    String str1 = null;
-	    String str2 = null;
-	    while (paramString.length() > 0)
-	    {
-		      System.out.println( "#1 Enter while: paramStringlen="+paramString.length());
+	{
+		System.out.println("PromptHelper.stringToPrompt: Prompt String:[" + paramString + "].");
+		ArrayList localArrayList = new ArrayList();
+		String str1 = null;
+		String str2 = null;
+		while (paramString.length() > 0)
+		{
+			System.out.println( "#1 Enter while: paramStringlen="+paramString.length());
 
-	      int i = paramString.indexOf("&gt;;");
-	      System.out.println( "#2 Enter while: i="+i);
+			int i = paramString.indexOf("&gt;;");
+			System.out.println( "#2 Enter while: i="+i);
 
-	      System.out.println( "PromptHelper.stringToPrompt: index:[" + i + "].");
-	      String str3;
+			System.out.println( "PromptHelper.stringToPrompt: index:[" + i + "].");
+			String str3;
 
-	      StringTokenizer localStringTokenizer;
-	      PromptType localPromptType;
-	      if (i > -1)
-	      {
-		      System.out.println( "#3 Enter IF i="+i);
+			StringTokenizer localStringTokenizer;
+			PromptType localPromptType;
+			if (i > -1)
+			{
+				System.out.println( "#3 Enter IF i="+i);
 
-	        str3 = paramString.substring(0, i);
-	        
-		      System.out.println( "#4 Enter IF str3="+str3);
+				str3 = paramString.substring(0, i);
 
-	        paramString = paramString.substring(i + 2);
-		      System.out.println( "#5 Enter IF paramString="+paramString);
+				System.out.println( "#4 Enter IF str3="+str3);
 
-	        localStringTokenizer = new StringTokenizer(str3, "PS&lt;");
-		      System.out.println( "#6 Enter IF str3="+str3);
+				paramString = paramString.substring(i + 2);
+				System.out.println( "#5 Enter IF paramString="+paramString);
 
-	      // while (localStringTokenizer.hasMoreTokens())
-	       // {
-			      System.out.println( "#7 Enter IF localStringTokenizer=####");
+				localStringTokenizer = new StringTokenizer(str3, "PS&lt;");
+				System.out.println( "#6 Enter IF str3="+str3);
 
-	          localPromptType = new PromptType();
-	          str1 = localStringTokenizer.nextToken();
-	          System.out.println("PromptHelper.stringToPrompt: promptType:[" + str1 + "].");
-	          localPromptType.setType(str1);
-	          str2 = localStringTokenizer.nextToken();
-	          System.out.println( "PromptHelper.stringToPrompt: promptValue:[" + str2 + "].");
-	          localPromptType.setValue(str2);
-	          localArrayList.add(localPromptType);
-	        }
-	     // }
-	      else
-	      {
-	        str3 = paramString.substring(0, i);
-	        System.out.println( "PromptHelper.stringToPrompt: lastParsedString:[" + str3 + "].");
-	        localStringTokenizer = new StringTokenizer(str3, "<");
-	        while (localStringTokenizer.hasMoreTokens())
-	        {
-	          localPromptType = new PromptType();
-	          str1 = localStringTokenizer.nextToken();
-	          System.out.println( "PromptHelper.stringToPrompt: promptType:[" + str1 + "].");
-	          localPromptType.setType(str1);
-	          str2 = localStringTokenizer.nextToken();
-	          System.out.println( "PromptHelper.stringToPrompt: promptValue:[" + str2 + "].");
-	          localPromptType.setValue(str2);
-	        }
-	        paramString = "";
-	      }
-	    }
-	    return localArrayList;
-	  }
-/*
+				// while (localStringTokenizer.hasMoreTokens())
+				// {
+				System.out.println( "#7 Enter IF localStringTokenizer=####");
+
+				localPromptType = new PromptType();
+				str1 = localStringTokenizer.nextToken();
+				System.out.println("PromptHelper.stringToPrompt: promptType:[" + str1 + "].");
+				localPromptType.setType(str1);
+				str2 = localStringTokenizer.nextToken();
+				System.out.println( "PromptHelper.stringToPrompt: promptValue:[" + str2 + "].");
+				localPromptType.setValue(str2);
+				localArrayList.add(localPromptType);
+			}
+			// }
+			else
+			{
+				str3 = paramString.substring(0, i);
+				System.out.println( "PromptHelper.stringToPrompt: lastParsedString:[" + str3 + "].");
+				localStringTokenizer = new StringTokenizer(str3, "<");
+				while (localStringTokenizer.hasMoreTokens())
+				{
+					localPromptType = new PromptType();
+					str1 = localStringTokenizer.nextToken();
+					System.out.println( "PromptHelper.stringToPrompt: promptType:[" + str1 + "].");
+					localPromptType.setType(str1);
+					str2 = localStringTokenizer.nextToken();
+					System.out.println( "PromptHelper.stringToPrompt: promptValue:[" + str2 + "].");
+					localPromptType.setValue(str2);
+				}
+				paramString = "";
+			}
+		}
+		return localArrayList;
+	}
+	/*
 	  public String promptToString(TraceReport paramTraceReport, SCESession paramSCESession, String paramString, Prompt paramPrompt)
 	  {
 	    StringBuffer localStringBuffer = new StringBuffer();
@@ -239,5 +239,5 @@ public class Test4 {
 	    paramTraceReport.trace(1, "PromptHelper.promptToString: Returning promptBuffer [" + localStringBuffer + "].");
 	    return localStringBuffer.toString();
 	  }
-	  */
+	 */
 }

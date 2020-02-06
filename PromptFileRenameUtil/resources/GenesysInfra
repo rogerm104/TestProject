@@ -1,0 +1,114 @@
+JavaScript sample programs
+Git integration
+-looping through object and array using for each /for
+-String methods
+
+
+
+
+dialogprepare
+
+
+-contact center space 
+-Inbound application- Self service application with uitilites
+-outbound -survey or alerts  - self serivice app -  agent transfer /callback
+-Agent desktop applications - 
+-vendor - Email/SMS/
+
+closely work in solutions architect during initial phases of project to provide techical & feasility aspect of the project
+Design
+external interfaces and dependencies for projects -document 
+work on callflow design Along with customer inputs 
+
+part of developement - as per visio 
+Integration testing / Unit tesing 
+reaease for UAT
+UAT feedback & signoff 
+GO live 
+
+Genesys 8.5
+
+Customer Interaction Management 
+
+Configuration Services - one of the Core Services (internet)
+Management Services
+Interaction Services
+Attached data- Size 64kb
+Statistics Services 
+Reporting 
+ccPulse+ -real time repoorts ACD
+CCAnalyzer - Historic , Operations 
+Uniue Selling products-
+
+
+Gensys URS---universal Routing soln
+soln that can route interaction bases on 
+Real time statics
+Customer Stored data
+Customer defined business rules
+voice/Email/chat/Open media in -facebook/whatsapp/lindein
+
+
+Routing statergies - 
+Data driven
+Skills based 
+Service based
+Last Aegnt/ Relationship based routing
+Multi site Routing 
+Business Priority Routing 
+
+
+Routing capablities 
+Virtual Queues -VDN
+Statergies
+
+
+GEnesys Framework- 5 layers
+User Interaction Layer
+Config layer
+Media Layer
+Service Layer
+Management Layer
+
+Database layer
+
+Day2 Genesys!
+installation of confg server template 
+host ip with 
+OS - Redhat
+SCS- Solution control server (part of management server sends alaram from message server)
+LCA - 
+
+for config DB need DAP data access point 
+oracle server -jdbc connectivity 
+
+TSAPI (ADDP Protocol) Avaya Switch
+Cisco (ICM) for cisco UCM
+interfacing with genesys T Server
+SIP Tserver (ADDP Protocol) Genesys
+-URS for attached data
+
+Deploy the app:
+Take URL from Tomcat server ending with src-gen/.vxml 
+Map it on 
+Provisioning ->Voice Platform >IVR Profile >> TEST
+Provisioning ->Voice Platform->DID confiure DID
+to find out logs
+ENV-Business Units 
+
+ENV-> APP ->App NAME-> MCP->reporting Server
+Log will print into MCP & Reporting Server as well
+
+MCP->server info and check log file
+Reporting Server - > table icon_admin.custom_vars , icon_admin.event_logs using session_id
+
+
+Seesion ID: only VXML
+Conn ID: Routing application generates conn ID URS
+Concepts:
+Prerouting (Mostly commom)
+SIP->URS->ORS->RM-MCP
+Routing - > IVR -> Routing -> Agent
+PostRouting
+SIP->
+
