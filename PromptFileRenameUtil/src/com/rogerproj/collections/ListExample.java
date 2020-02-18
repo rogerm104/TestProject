@@ -19,7 +19,7 @@ public class ListExample {
 	//ArrayList -index based dynamic array - 10 ,load factor 50%, copies all elements to new array, not sync 
 	//maintains insertion order
 	//cannot remove elements using for loop causes concurrent modification use iterator.remove()
-
+	// Doubly Linked List Data Structure for linked list
 	public static void main(String[] args) {
 		
 		logNow.debug("Testing log4j start....");

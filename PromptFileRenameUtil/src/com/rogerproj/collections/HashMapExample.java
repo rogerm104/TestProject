@@ -115,7 +115,6 @@ public class HashMapExample {
 		lHashMap.put(phone7, "Nokia 3310_2");
 		Iterator<Phone> PhnlhmIt =lHashMap.keySet().iterator();
 		logNow.debug(new Date() +" lHashMap " + lHashMap.size());
-
 		while(PhnlhmIt.hasNext()){
 			
 			if (PhnlhmIt.next().equals(phone1)){

@@ -21,6 +21,8 @@ class empCompatator implements Comparator<Employee>{
 	//-1- no changes
 	//*LinkedHashSet
 	//LinkedHashSet- Removes duplicates and maintains insertion order
+	// Heterogeneous objects are not allowed.
+	//undelying data structure is balancedTree
 	
 	@Override
 	public int compare(Employee arg0, Employee arg1) {

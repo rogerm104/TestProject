@@ -87,7 +87,7 @@ Cisco (ICM) for cisco UCM
 interfacing with genesys T Server
 SIP Tserver (ADDP Protocol) Genesys
 -URS for attached data
-
+Day 3
 Deploy the app:
 Take URL from Tomcat server ending with src-gen/.vxml 
 Map it on 
@@ -111,4 +111,31 @@ SIP->URS->ORS->RM-MCP
 Routing - > IVR -> Routing -> Agent
 PostRouting
 SIP->
+
+Day 4
+Creating LRG's
+Connection between RM &MCP 
+under provisioning -> mcp->create lrg and add MCP under REsource assignment
+and redource management selection choose RM
+
+Genesys Routing Soln (Voice Routing)
+1. SIP
+Orchestration Platfrom(URS+ORS)
+2. URS -Execustes the logic (Cassandra)/Routes call to agent using SIP (Incase on direct transfer from IVR Only Use URS no route)
+3. ORS -Fetches from APP server & understands eecuts/SCXML code
+
+debug - URS logs for any routing issues
+Deployment process:
+Genrate IPD from interactionProcees
+Deploy the IPD on Config server by clicking on interactionProcees file
+Loging to GA than go to Provisioning - > orchestration app (Seach project name)
+Script object - MAP the patch of scxml scrip in configuration(IPD)
+MAP under DN number the incoming number. Use the DN than in the 
+VXML script to transfer to The actual route application(Use  Transfer node which will send it To URS and than exec script obj)
+URS logs: app/genesys/logs use search tag: args
+
+
+
+
+
 
