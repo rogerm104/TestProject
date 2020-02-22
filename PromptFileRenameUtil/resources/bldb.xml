@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- the proxool configuration can be embedded within the application's.
+Anything outside the "proxool" tag is ignored. @172.16.110.30:1521:ivrdev11g-->
+<something-else-entirely>
+  <proxool>
+    <alias>xml-bl</alias>
+    <driver-url>jdbc:oracle:thin:@192.168.233.65:1521:agcorcl</driver-url>
+    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+    <driver-properties>
+      <property name="user" value="bl"></property>
+      <property name="password" value="Passw0rd"/>
+    </driver-properties>
+    <maximum-connection-count>10</maximum-connection-count>
+    <house-keeping-test-sql>SELECT CURRENT_DATE FROM DUAL</house-keeping-test-sql>
+  </proxool>
+</something-else-entirely>
