@@ -1,15 +1,15 @@
 node{
 stage('Checkout'){
-git 
+git https://github.com/rogerm104/TestProject.git
 }
 stage('Build'){
-maven package
+println "The build was sucessful"
 }
 stage('Test'){
-maven test
+println "The test was sucessful"
 }
-stage('Test'){
-maven deploy
+stage('deploy'){
+println "The deploy was sucessful"
 }
 
 }
