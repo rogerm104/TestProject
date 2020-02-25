@@ -1,0 +1,15 @@
+node{
+stage('Checkout'){
+git 
+}
+stage('Build'){
+maven package
+}
+stage('Test'){
+maven test
+}
+stage('Test'){
+maven deploy
+}
+
+}
